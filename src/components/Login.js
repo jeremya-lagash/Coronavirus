@@ -7,8 +7,6 @@ import Link from "@material-ui/core/Link";
 import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
-import Home from "../Home";
-import Register from "./Register";
 
 function Copyright() {
   return (
@@ -59,7 +57,7 @@ export default function Login() {
             id="password"
             autoComplete="current-password"
           />
-          <Link to={Home}>
+          <Link href={"/home"}>
             <Button type="submit" fullWidth variant="contained" color="primary">
               Sign In
             </Button>
@@ -67,12 +65,19 @@ export default function Login() {
           <Typography component="text" variant="subtitle2">
             don't have an account?
           </Typography>
-          <Link to={Register}>
+          <Link href={"/register"}>
             <Button type="submit" fullWidth variant="text" color="primary">
               Register Now
             </Button>
           </Link>
         </form>
+        <br></br>
+        <br></br>
+        <Link href={"/home"}>
+          <Button type="submit" fullWidth variant="contained" color="primary">
+            Entrar
+          </Button>
+        </Link>
       </div>
       <Box mt={8}>
         <Copyright />

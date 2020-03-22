@@ -1,10 +1,15 @@
 import React, { Component } from "react";
 import "./App.css";
 import Routes from "./Routes";
+import { BrowserRouter } from "react-router-dom";
 
 class App extends Component {
   render() {
-    return <Routes />;
+    return (
+      <BrowserRouter>
+        <Routes />
+      </BrowserRouter>
+    );
   }
 }
 

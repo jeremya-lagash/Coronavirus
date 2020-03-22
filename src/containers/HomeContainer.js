@@ -1,15 +1,15 @@
 import React, { Component } from "react";
 import axios from "axios";
-import List from "../components/List";
+import Home from "../components/Home";
 
-class ListContainer extends Component {
+class HomeContainer extends Component {
   state = {
     countryData: []
   };
 
   componentDidMount() {
     axios
-      .get("https://coronavirus-19-api.herokuapp.com/countries")
+      .get("https://coronavirus-19-api.herokuapp.com/all")
       .then(res => {
         const countryData = res.data;
         console.log(countryData);
@@ -25,11 +25,11 @@ class ListContainer extends Component {
     return (
       <>
         <div>
-          <List countryData={countryData} />
+          <Home countryData={countryData} to={"/countries"} />
         </div>
       </>
     );
   }
 }
 
-export default ListContainer;
+export default HomeContainer;

@@ -1,12 +1,33 @@
-import React from "react";
-import "../App.css";
+import React, { Fragment } from "react";
+import { Grid, TableRow, Link } from "@material-ui/core";
 
-const Home = () => {
+function Home({ countryData, to }) {
+  const text = "de Covid-19 a Nivel Global";
   return (
-    <div className="App">
-      <h1>Ver Paises</h1>
-    </div>
+    <Fragment>
+      <center>
+        Casos {text}
+        <h1>
+          <TableRow xs={12}>
+            <Grid>{countryData.cases}</Grid>
+          </TableRow>
+        </h1>
+        Muertos {text}
+        <h1>
+          <TableRow xs={12}>
+            <Grid>{countryData.deaths}</Grid>
+          </TableRow>
+        </h1>
+        Curados {text}
+        <h1>
+          <TableRow xs={12}>
+            <Grid>{countryData.recovered}</Grid>
+          </TableRow>
+        </h1>
+        <Link href={to}>Ver Países</Link>
+      </center>
+    </Fragment>
   );
-};
+}
 
 export default Home;
